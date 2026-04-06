@@ -1,0 +1,22 @@
+n, m = map(int, input().split())
+num = []
+ind = m % n
+ans = ''
+
+for i in range(n):
+    num.append(input())
+
+if n - m >= 10 and n > 10:    
+    for i in range(10):
+        ans += num[ind + i]
+else:
+    while len(ans) != 10:
+        ans += num[ind]
+        ind += 1
+        if ind >= n:
+            ind = 0
+        
+        
+print(ans)
+    
+        

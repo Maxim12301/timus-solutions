@@ -1,0 +1,22 @@
+n = int(input())
+line = input()
+ans = 0
+while n != len(line):
+    line += input()
+
+line = line.replace('>', '1', line.count('>'))
+line = line.replace('<', '0', line.count('<'))
+line = list(map(int, list(line)))
+
+if 1 in line:     
+    line = line[line.index(1):]
+if 0 in line:
+    line = line[::-1]
+    line = line[line.index(0):]
+
+while 1 in line:
+    one = line.index(1)
+    ans += one
+    line.remove(1)
+
+print(ans)

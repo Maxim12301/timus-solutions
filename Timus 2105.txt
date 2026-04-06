@@ -1,0 +1,18 @@
+l, t, v_a, v_b = map(int, input().split())
+n = int(input())
+speed = v_a + v_b
+meet = 0
+s = speed * t
+
+for i in range(n):
+    type_n, st_time_n, time_n = map(int, input().split())
+    
+    
+    if type_n == 1:
+        s -= v_a * time_n
+        
+    if type_n == 2:
+        s -= v_b * time_n
+meet += s // l
+ 
+print(meet)
